@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportZone - Cửa Hàng Thể Thao Cao Cấp</title>
+  <!-- Liên kết tệp CSS riêng biệt -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- YÊU CẦU 2: Neo (thẻ a) trước header dẫn tới id="main" -->
+  <a href="#main" class="skip-link">Chuyển đến Nội dung chính</a>
+
+  <header class="site-header">
+    <div class="header-container">
+      <!-- YÊU CẦU 4 & 5: Nav với display: inline-block, width: 80% và nav img width: 10% -->
+      <nav>
+        <a href="#" class="logo-link">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=100&q=80" alt="SportZone Logo">
+          <span class="brand-name">SportZone</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#featured">Bán Chạy</a></li>
+          <li><a href="#categories">Danh Mục</a></li>
+          <li><a href="#products">Dụng Cụ</a></li>
+          <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="cart-btn-wrapper">
+        <button id="cartBtn" class="cart-btn" onclick="toggleCart()">
+          🛒 Giỏ hàng (<span id="cartCount">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- YÊU CẦU 2: Thêm id="main" vào thẻ main -->
+  <main id="main">
+    <!-- Hero Banner -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Bứt Phá Giới Hạn Cùng SportZone</h1>
+        <p>Trang thiết bị thể thao chính hãng, hiện đại và chất lượng hàng đầu.</p>
+        <a href="#products" class="cta-button">Khám Phá Ngay</a>
+      </div>
+    </section>
+
+    <!-- Section Lưới 2 cột (Grid Layout) -->
+    <section id="featured" class="section-container">
+      <h2>Sản Phẩm Bán Chạy (Thiết kế Grid)</h2>
+      <p class="section-desc">Sử dụng CSS Grid 2 cột theo yêu cầu bài tập.</p>
+
+      <!-- YÊU CẦU 6 & 8: Lớp grid 2 cột (40% 40%), justify-content, align-items, row-gap -->
+      <div class="grid">
+        <div class="grid-card">
+          <!-- YÊU CẦU 7: .grid img có width 100% -->
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" alt="Giày Chạy Bộ Nike Air">
+          <div class="card-body">
+            <h3>Giày Chạy Bộ Nike Pro</h3>
+            <p class="price">2,490,000 VNĐ</p>
+            <p>Trọng lượng siêu nhẹ, đệm bọt êm ái hỗ trợ tối đa từng bước chạy.</p>
+            <button onclick="addToCart('Giày Chạy Bộ Nike Pro', 2490000)">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <div class="grid-card">
+          <img src="https://images.unsplash.com/photo-1511746315387-c4a76990fdce?w=600&q=80" alt="Áo Thể Thao Adidas DryFit">
+          <div class="card-body">
+            <h3>Áo Thể Thao Adidas DryFit</h3>
+            <p class="price">650,000 VNĐ</p>
+            <p>Chất liệu thoáng khí, thấm hút mồ hôi cực tốt cho tập luyện.</p>
+            <button onclick="addToCart('Áo Thể Thao Adidas DryFit', 650000)">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <div class="grid-card">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=80" alt="Tạ Tay Cao Su 10kg">
+          <div class="card-body">
+            <h3>Bộ Tạ Tay Cao Su Premium</h3>
+            <p class="price">1,200,000 VNĐ</p>
+            <p>Lõi thép bọc cao su chống va đập, cầm nắm chắc chắn an toàn.</p>
+            <button onclick="addToCart('Bộ Tạ Tay Cao Su Premium', 1200000)">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <div class="grid-card">
+          <img src="https://images.unsplash.com/photo-1608245594328-3e4b0c2b2dfc?w=600&q=80" alt="Thảm Tập Yoga Cao Cấp">
+          <div class="card-body">
+            <h3>Thảm Tập Yoga TPE Eco</h3>
+            <p class="price">450,000 VNĐ</p>
+            <p>Chống trượt 2 mặt, độ bám cao, thân thiện môi trường.</p>
+            <button onclick="addToCart('Thảm Tập Yoga TPE Eco', 450000)">Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Flexbox Layout -->
+    <section id="categories" class="section-container">
+      <h2>Danh Mục Nổi Bật (Thiết kế Flex)</h2>
+      <p class="section-desc">Sử dụng CSS Flexbox theo yêu cầu bài tập.</p>
+
+      <!-- YÊU CẦU 9: Lớp flex với display: flex, flex-wrap và justify-content -->
+      <div class="flex">
+        <div class="flex-item">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=400&q=80" alt="Bóng đá">
+          <h4>Bóng Đá & Futsal</h4>
+          <p>Giày đinh, quả bóng chuẩn FIFA, phụ kiện thi đấu.</p>
+        </div>
+
+        <div class="flex-item">
+          <img src="https://images.unsplash.com/photo-1519766304817-4f37bda74a29?w=400&q=80" alt="Bóng rổ">
+          <h4>Bóng Rổ Chuyên Nghiệp</h4>
+          <p>Giày bóng rổ, đồng phục team, bóng Spalding.</p>
+        </div>
+
+        <div class="flex-item">
+          <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=400&q=80" alt="Gym">
+          <h4>Thể Hình & Gym</h4>
+          <p>Tạ đơn, băng quấn tay, dây kháng lực cao cấp.</p>
+        </div>
+
+        <div class="flex-item">
+          <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&q=80" alt="Bơi lội">
+          <h4>Bơi Lội & Dưới Nước</h4>
+          <p>Kính bơi Speedo, mũ bơi, quần bơi thể thao.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Flex bổ sung -->
+    <section id="products" class="section-container">
+      <h2>Dụng Cụ Thể Thao Phổ Biến</h2>
+
+      <div class="flex flex-products">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=400&q=80" alt="Bóng Rổ Molten">
+          <h4>Bóng Rổ Molten GM7X</h4>
+          <p class="price">890,000 VNĐ</p>
+          <button onclick="addToCart('Bóng Rổ Molten GM7X', 890000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1617083934555-ac7d4fed8814?w=400&q=80" alt="Vợt Cầu Lông Yonex">
+          <h4>Vợt Cầu Lông Yonex Astrox</h4>
+          <p class="price">3,150,000 VNĐ</p>
+          <button onclick="addToCart('Vợt Cầu Lông Yonex Astrox', 3150000)">Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=80" alt="Đồng Hồ Thể Thao Garmin">
+          <h4>Đồng Hồ Garmin Forerunner</h4>
+          <p class="price">5,890,000 VNĐ</p>
+          <button onclick="addToCart('Đồng Hồ Garmin Forerunner', 5890000)">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Giỏ Hàng -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="toggleCart()">&times;</span>
+      <h3>Giỏ Hàng Của Bạn</h3>
+      <ul id="cartItemsList"></ul>
+      <div class="cart-total">
+        <strong>Tổng tiền: <span id="cartTotal">0</span> VNĐ</strong>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Thanh Toán</button>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <p>&copy; 2026 SportZone. Bản quyền thuộc về Cửa Hàng Thể Thao SportZone.</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(title, price) {
+      cart.push({ title, price });
+      updateCartDisplay();
+      alert(`Đã thêm "${title}" vào giỏ hàng!`);
+    }
+
+    function updateCartDisplay() {
+      document.getElementById('cartCount').textContent = cart.length;
+      const list = document.getElementById('cartItemsList');
+      list.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item) => {
+        total += item.price;
+        const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.justifyContent = 'space-between';
+        li.style.padding = '8px 0';
+        li.style.borderBottom = '1px solid #eee';
+        li.innerHTML = `
+          <span>${item.title}</span>
+          <span>${item.price.toLocaleString('vi-VN')} VNĐ</span>
+        `;
+        list.appendChild(li);
+      });
+
+      document.getElementById('cartTotal').textContent = total.toLocaleString('vi-VN');
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cartModal');
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert('Giỏ hàng của bạn đang trống!');
+        return;
+      }
+      alert('Cảm ơn bạn đã đặt hàng! Đơn hàng đang được xử lý.');
+      cart = [];
+      updateCartDisplay();
+      toggleCart();
+    }
+  </script>
+</body>
+</html>
